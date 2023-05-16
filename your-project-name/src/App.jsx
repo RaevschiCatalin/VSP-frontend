@@ -1,7 +1,8 @@
-import './App.css';
 import React, { useEffect, useState } from 'react';
-import Api from './Components/Api';
-import ChartComponent from './Components/Chart';
+import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
+import HomePage from './Components/HomePage';
+import ExchangeChart from './Components/ExchangeChart';
+import ValuteConverter from './Components/ValuteConverter';
 import Navbar from './Components/Navbar';
 
 const App = () => {
@@ -34,31 +35,33 @@ const App = () => {
   }, []);
 
   return (
-    <div className="container">
-    <Navbar />
-      {showTitle && (
-        <div className="svg-wrapper">
-          <svg height="200" width="800" xmlns="http://www.w3.org/2000/svg">
-            <rect className="shape1" height="200" width="800" />
-            <rect className="shape2" height="200" width="800" />
-            <text className="text" x="50%" y="50%" dominantBaseline="middle" textAnchor="middle">
-              VSP Frontend Exchange
-            </text>
-          </svg>
-        </div>
-        
-      )}
-        
-      {!showTitle && (
-        
-        <div className="flex flex-col items-center justify-center max-h-0">
-        <Navbar showNavbar={!showTitle} />
-          <h1 className="title">Exchange Rate Chart</h1>
-          <Api onDataProcessed={onDataProcessed} />
-          {chartData ? <ChartComponent data={chartData} /> : <p>Loading...</p>}
-        </div>
-      )}
+    <Router>
+      <div className="container">
+        <Navbar />
+
+        {showTitle && (
+          <div className="svg-wrapper">
+            <svg height="200" width="800" xmlns="http://www.w3.org/2000/svg">
+              <rect className="shape1" height="200" width="800" />
+              <rect className="shape2" height="200" width="800" />
+              <text className="text" x="50%" y="50%" dominantBaseline="middle" textAnchor="middle">
+                VSP Frontend Exchange
+              </text>
+            </svg>
+          </div>
+        )}
+
+        {!showTitle && (
+          <div className="main-content">
+            <Routes>
+              <Route path="/" element={<HomePage />} />
+              <Route path="/exchange-chart" element={<ExchangeChart />} />
+              <Route path="/valute-converter" element={<ValuteConverter />} />
+            </Routes>
+          </div>
+        )}
       </div>
+    </Router>
   );
 };
 
