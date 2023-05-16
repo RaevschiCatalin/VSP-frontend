@@ -1,42 +1,99 @@
-#root {
-  max-width: 1280px;
-  margin: 0 auto;
-  padding: 2rem;
+@import url('https://fonts.googleapis.com/css?family=Roboto+Condensed:400,700');
+
+@keyframes animateStroke1 {
+  0% {
+    stroke-dashoffset: 1600;
+  }
+  20% {
+    stroke-dashoffset: 1600;
+  }
+  50% {
+    stroke-dashoffset: 800;
+  }
+  100% {
+    stroke-dashoffset: 0;
+  }
+}
+
+@keyframes animateStroke2 {
+  0% {
+    stroke-dashoffset: -1600;
+  }
+  20% {
+    stroke-dashoffset: -1600;
+  }
+  50% {
+    stroke-dashoffset: -800;
+  }
+  100% {
+    stroke-dashoffset: 0;
+  }
+}
+
+body {
+  background: #fff;
   text-align: center;
+  height: 100vh;
+  overflow: hidden;
+  margin: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.container{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  margin-top: 50px;
+  max-width: 100vh;
+}
+.svg-wrapper {
+  position: relative;
+  width: 100%;
+  height: 200px;
+  margin: 0 auto;
 }
 
-.logo {
-  height: 6em;
-  padding: 1.5em;
-  will-change: filter;
-  transition: filter 300ms;
-}
-.logo:hover {
-  filter: drop-shadow(0 0 2em #646cffaa);
-}
-.logo.react:hover {
-  filter: drop-shadow(0 0 2em #61dafbaa);
+
+.shape1,
+.shape2 {
+  stroke-width: 5px;
+  fill: transparent;
+  stroke: #282C35;
+  border-bottom: 7px solid #fff;
+  animation-fill-mode: forwards;
 }
 
-@keyframes logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.shape1 {
+  stroke-dasharray: 1600;
+  stroke-dashoffset: 1600;
+  animation: animateStroke1 4s linear;
+  animation-delay: 0.6s; 
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  a:nth-of-type(2) .logo {
-    animation: logo-spin infinite 20s linear;
-  }
+.shape2 {
+  stroke-dasharray: 1600;
+  stroke-dashoffset: -1600;
+  animation: animateStroke2 4s linear;
+  animation-delay: 0.6s;
 }
 
-.card {
-  padding: 2em;
+.text {
+  font-family: 'Roboto Condensed';
+  font-size: 2.3rem;
+  line-height: 32px;
+  letter-spacing: 8px;
+  color: #282C35;
+  position: relative;
+  font-weight: 650;
+  margin-bottom: 20px;
+  text-anchor: middle;
+  dominant-baseline: middle;
 }
 
-.read-the-docs {
-  color: #888;
+.title {
+  font-size: 3rem;
+  color: #282C35;
 }
+
