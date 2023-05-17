@@ -44,25 +44,28 @@ const Api = ({ onDataProcessed }) => {
   const processDataForChart = (data) => {
     const parser = new DOMParser();
     const xmlDoc = parser.parseFromString(data, 'application/xml');
-
+  
     const cubeElement = xmlDoc.querySelector('Cube');
     const rateElements = cubeElement.querySelectorAll('Rate');
-
+  
     const labels = [];
     const values = [];
-
+  
     rateElements.forEach((rateElement) => {
       const currency = rateElement.getAttribute('currency');
       const rate = rateElement.textContent;
-
-      labels.push(currency);
-      values.push(parseFloat(rate));
+  
+      if (currency === 'XAU') {
+        labels.push(currency);
+        values.push(parseFloat(rate) / 100);
+      } else {
+        labels.push(currency);
+        values.push(parseFloat(rate));
+      }
     });
-
+  
     return { labels, values };
   };
-
-  return null;
 };
 
 export default Api;

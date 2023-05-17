@@ -7,7 +7,7 @@ const Navbar = ({ showNavbar }) => {
   }
 
   return (
-    <nav className="navbar bg-white p-4 w-full fixed top-0 left-0 text-2xl">
+    <nav className="navbar bg-white p-3 w-full fixed top-0 left-0 text-2xl">
       <div className="navbar__container flex justify-center items-center">
         <ul className="navbar__menu flex justify-between items-center list-none">
           <li className="mr-24">
@@ -19,13 +19,13 @@ const Navbar = ({ showNavbar }) => {
             </a>
           </li>
           <li className="mr-48">
-            <a href="/about" className="text-gray-800 hover:text-gray-500">
-              About
+            <a href="/valute-converter" className="text-gray-800 hover:text-gray-500">
+              Converter
             </a>
           </li>
           <li>
-            <a href="/contact" className="text-gray-800 hover:text-gray-500">
-              Contact
+            <a href="/exchange-chart" className="text-gray-800 hover:text-gray-500">
+              Chart
             </a>
           </li>
         </ul>

@@ -2,43 +2,27 @@ import React, { useEffect, useState } from 'react';
 import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
 import HomePage from './Components/HomePage';
 import ExchangeChart from './Components/ExchangeChart';
-import ValuteConverter from './Components/ValuteConverter';
+import Converter from './Components/Converter';
 import Navbar from './Components/Navbar';
+import Footer from './Components/Footer';
+import './App.css';
 
 const App = () => {
   const [showTitle, setShowTitle] = useState(true);
-  const [chartData, setChartData] = useState(null);
-  const [isLoading, setIsLoading] = useState(true);
-
-  const onDataProcessed = (processedData) => {
-    setChartData(processedData);
-    setIsLoading(false);
-  };
-
-  useEffect(() => {
-    const savedData = localStorage.getItem('chartData');
-    if (savedData) {
-      setChartData(JSON.parse(savedData));
-    }
-  }, []);
-
-  useEffect(() => {
-    if (chartData) {
-      localStorage.setItem('chartData', JSON.stringify(chartData));
-    }
-  }, [chartData]);
+  const [showContent, setShowContent] = useState(false);
 
   useEffect(() => {
     setTimeout(() => {
       setShowTitle(false);
-    }, 4000);
+      setTimeout(() => {
+        setShowContent(true);
+      }, 0);
+    }, 3000);
   }, []);
 
   return (
     <Router>
       <div className="container">
-        <Navbar />
-
         {showTitle && (
           <div className="svg-wrapper">
             <svg height="200" width="800" xmlns="http://www.w3.org/2000/svg">
@@ -51,15 +35,21 @@ const App = () => {
           </div>
         )}
 
-        {!showTitle && (
-          <div className="main-content">
-            <Routes>
-              <Route path="/" element={<HomePage />} />
-              <Route path="/exchange-chart" element={<ExchangeChart />} />
-              <Route path="/valute-converter" element={<ValuteConverter />} />
-            </Routes>
-          </div>
+        {showContent && (
+          <>
+            <div className="main-content fade-in">
+              <Routes>
+                <Route path="/" element={<HomePage />} />
+                <Route path="/exchange-chart" element={<ExchangeChart />} />
+                <Route path="/valute-converter" element={<Converter />} />
+              </Routes>
+            </div>
+            <Navbar showNavbar={true} />
+            <Footer />
+          </>
         )}
+
+        {!showTitle && !showContent && <Navbar showNavbar={true} />}
       </div>
     </Router>
   );

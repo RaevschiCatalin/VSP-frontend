@@ -24,6 +24,14 @@ const ChartComponent = ({ data }) => {
         scales: {
           y: {
             beginAtZero: true,
+            ticks: {
+              precision: 0,
+              stepSize: 1,
+            },
+            title: {
+              display: true,
+              text: 'Exchange Rate(to RON)',
+            },
           },
         },
       },
@@ -35,7 +43,11 @@ const ChartComponent = ({ data }) => {
     };
   }, [data]);
 
-  return <canvas ref={chartRef} />;
+  return (
+    <div style={{ width: '100vh' }}>
+      <canvas ref={chartRef} />
+    </div>
+  );
 };
 
 export default ChartComponent;
