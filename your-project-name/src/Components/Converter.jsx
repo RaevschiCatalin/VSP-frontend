@@ -68,8 +68,8 @@ const Converter = () => {
   };
 
   return (
-    <div className="container mx-auto px-4 py-8">
-      <h2 className="text-2xl font-bold text-center mb-6">Currency Converter</h2>
+    <div className="container mx-auto px-4 py-4">
+      <h2 className="text-2xl font-bold text-center mb-12">Currency Converter</h2>
 
       {isLoading ? (
         <p>Loading data...</p>
