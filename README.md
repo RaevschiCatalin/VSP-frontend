@@ -8,25 +8,25 @@ VSP Frontend Exchange is a currency exchange app built with React and Tailwind C
 
 Clone the repository:
 
-git clone git@github.com:RaevschiCatalin/VSP-frontend.git
+**git clone git@github.com:RaevschiCatalin/VSP-frontend.git**
 
 Navigate to the project directory:
 
-cd VSP-frontend
+**cd VSP-frontend**
 
 Install the dependencies:
 
-npm install
+**npm install**
 
 ## Usage
 
 Navigate to the project's source folder:
 
-cd your-project-name/src
-
+**cd your-project-name/src**
+(the project name really is "your-project-name", sorry for confusion)
 Start the server:
 
-node server.js
+**node server.js**
 
 Make note of the host name and port displayed in the console, e.g., "Server listening on http://localhost:3431".
 
@@ -36,11 +36,11 @@ cd ../..
 
 Start the development server:
 
-npm run dev
+**npm run dev**
 
 or
 
-npm run preview
+**npm run preview**
 
 The app will be accessible in your browser using the host and port provided by the server. For example, if the server is running on "http://localhost:8000", you should access the app at http://localhost:8000.
 
