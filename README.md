@@ -2,7 +2,7 @@
 
 VSP Frontend Exchange is a currency exchange app built with React and Tailwind CSS. It utilizes the BNR (National Bank of Romania) API to retrieve exchange rate data and provides features such as currency chart visualization and currency conversion.
 ![Demo](./your-project-name/src/img/ezgif.com-video-to-gif.gif)
-![Screenshot](./your-project-name/src/img/mainpage_ss.png)
+
 
 ## Installation
 
@@ -54,6 +54,7 @@ The app will be accessible in your browser using the host and port provided by t
 - BNR API Integration: Utilize the BNR (National Bank of Romania) API to fetch accurate exchange rate data.
 - Local Data Storage: Store exchange rate data locally to improve performance and reduce API calls.
 - Beautiful UI: Enjoy a visually appealing and user-friendly interface built with React and Tailwind CSS.
+![Screenshot](./your-project-name/src/img/mainpage_ss.png)
 - A cute animation that plays when you load the website.
 
 
