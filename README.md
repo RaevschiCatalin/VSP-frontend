@@ -50,7 +50,7 @@ The app will be accessible in your browser using the host and port provided by t
 - Currency Chart Visualization: View exchange rate data in the form of an interactive chart.
 ![Screenshot](./your-project-name/src/img/chart_ss.png)
 - Currency Conversion: Convert amounts between different currencies using real-time exchange rates.
-![Screenshot](./your-project-name/src/img/conversion_ss.png)
+![Screenshot](./your-project-name/src/img/conveter.png)
 - BNR API Integration: Utilize the BNR (National Bank of Romania) API to fetch accurate exchange rate data.
 - Local Data Storage: Store exchange rate data locally to improve performance and reduce API calls.
 - Beautiful UI: Enjoy a visually appealing and user-friendly interface built with React and Tailwind CSS.
